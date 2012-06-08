@@ -1,7 +1,11 @@
 TallerMvp::Application.routes.draw do
-  resources :songs
 
-  devise_for :users
+  devise_for :users do
+    resources :songs do
+      resource :vote_up, only: [:create]
+      resource :vote_down, only: [:create]
+    end
+  end
 
   root :to => 'home#index'
 

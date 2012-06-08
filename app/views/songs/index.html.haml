@@ -1,0 +1,10 @@
+%h1
+  Canciones
+
+- @songs.each do |song|
+  .song
+    = song.url
+    = song.votes_count
+    |
+    = link_to 'Up', song_vote_up_path(song), method: :post
+    = link_to 'Down', song_vote_down_path(song), method: :post

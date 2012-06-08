@@ -1,0 +1,2 @@
+module VoteDownHelper
+end
